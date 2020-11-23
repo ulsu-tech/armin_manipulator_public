@@ -155,6 +155,6 @@ link (not done yet).
 другая закрывает захват. На модели и в симуляторе это не поддерживается.
 
 Пример интерактивного управления от игрового джойстика можно увидеть по ссылке:
-![Video joystick manipulation](https://youtu.be/oCahBy3ITiU "Интерактивное управление от игрового джойстика")
+[![Video joystick manipulation](https://img.youtube.com/vi/oCahBy3ITiU/0.jpg  "Интерактивное управление от игрового джойстика ссылка на YouTube")](https://www.youtube.com/watch?v=oCahBy3ITiU)
 
 
