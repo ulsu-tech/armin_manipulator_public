@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="armin_arm_gazebo" params="prefix">
+    <!-- nothing to do here at the moment -->
+  <gazebo reference="${prefix}base_link">
+  <visual>  
+    <material>  
+      <ambient>0.019225 0.019225 0.09225 0.99</ambient>  
+      <diffuse>0.0754 0.2 0.754 1.0</diffuse>  
+      <specular>0.508273 0.8273 0.8273 1.0</specular>  
+      <emissive>0.0 0.0 0.0 0.0</emissive>  
+    </material>  
+  </visual>  
+    <gravity>True</gravity><selfCollide>True</selfCollide>
+</gazebo>
+  <gazebo reference="${prefix}a1_link">  
+  <visual>  
+    <material>  
+      <ambient>0.01225 0.019225 0.09 1.0</ambient>  
+      <diffuse>0.50754 0.50754 0.50754 1.0</diffuse>  
+      <specular>0.273 0.9273 0.973 1.0</specular>  
+      <emissive>0.0 0.0 0.0 0.0</emissive>  
+    </material>  
+  </visual>  
+    <gravity>True</gravity><selfCollide>True</selfCollide>
+<dampingFactor>0.00</dampingFactor>
+</gazebo>
+
+  <gazebo reference="${prefix}a2_link">  
+  <visual>  
+    <material>  
+      <ambient>0.0125 0.09225 0.09225 1.0</ambient>  
+      <diffuse>0.50754 0.50754 0.50754 1.0</diffuse>  
+      <specular>0.125 0.9225 0.9225 1.0</specular>  
+      <emissive>0.0 0.0 0.0 0.0</emissive>  
+    </material>  
+  </visual>  
+    <gravity>True</gravity><selfCollide>True</selfCollide>
+<dampingFactor>0.00</dampingFactor>
+</gazebo>
+  <gazebo reference="${prefix}a3_link">  
+  <visual>  
+    <material>  
+      <ambient>0.019225 0.019225 0.019225 1.0</ambient>  
+      <diffuse>0.754 0.754 0.754 1.0</diffuse>  
+      <specular>0.8273 0.8273 0.8273 1.0</specular>  
+      <emissive>0.0 0.0 0.0 0.0</emissive>  
+    </material>  
+  </visual>  
+    <gravity>True</gravity><selfCollide>True</selfCollide>
+<dampingFactor>0.00</dampingFactor>
+</gazebo>
+  <gazebo reference="${prefix}a4_link">  
+  <visual>  
+    <material>  
+      <ambient>0.0225 0.09225 0.025 1.0</ambient>  
+      <diffuse>0.754 0.0754 0.0754 1.0</diffuse>  
+      <specular>0.8273 0.8273 0.8273 1.0</specular>  
+      <emissive>0.0 0.0 0.0 0.0</emissive>  
+    </material>  
+  </visual>  
+    <gravity>True</gravity><selfCollide>True</selfCollide>
+<dampingFactor>0.00</dampingFactor>
+</gazebo>
+  <gazebo reference="${prefix}a5_link">  
+  <visual>  
+    <material>  
+      <ambient>0.019225 0.019225 0.019225 1.0</ambient>  
+      <diffuse>0.827 0. 0.3 1.0</diffuse>  
+      <specular>0.8273 0.0 0.3 1.0</specular>  
+      <emissive>0.0 0.0 0.0 0.0</emissive>  
+    </material>  
+  </visual>  
+    <gravity>True</gravity><selfCollide>True</selfCollide>
+<dampingFactor>0.00</dampingFactor>
+</gazebo>
+  <gazebo reference="${prefix}a6_link">  
+  <visual>
+    <material>
+      <ambient>0.09225 0.09225 0.09225 0.85</ambient>
+      <diffuse>0.754 0.4 0.54 0.9</diffuse>  
+      <specular>0.8273 0.65 0.43 0.99</specular>  
+      <emissive>0.0 0.0 0.0 0.0</emissive>  
+    </material>  
+  </visual>  
+    <gravity>True</gravity><selfCollide>True</selfCollide>
+<dampingFactor>0.00</dampingFactor>
+</gazebo>
+  </xacro:macro>
+
+</robot>

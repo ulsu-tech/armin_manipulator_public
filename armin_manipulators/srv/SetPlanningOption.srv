@@ -1,0 +1,4 @@
+OptionSetting setting
+uint8 value
+---
+bool result

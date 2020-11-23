@@ -1,0 +1,3 @@
+<launch>
+    <node name="armin_sphere_manipulator" pkg="armin_manipulators" type="sphere_tensored_manipulator" output="screen" />
+</launch>

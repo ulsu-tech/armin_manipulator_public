@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find armin_description)/urdf/armin.transmission.xacro" />
+  <xacro:include filename="$(find armin_description)/urdf/armin.gazebo.xacro" />
+
+<xacro:macro name="armin_robot" params="prefix joint_limited
+    a1_lower_limit:=0.0 a1_upper_limit:=0.2
+    a2_lower_limit:=${-pi} a2_upper_limit:=${pi}
+    a3_lower_limit:=${-pi} a3_upper_limit:=${pi}
+    a4_lower_limit:=${-pi} a4_upper_limit:=${pi}
+    a5_lower_limit:=${-pi} a5_upper_limit:=${pi}
+    a6_lower_limit:=${-pi} a6_upper_limit:=${pi}">
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-1.2225E-07 -5.7652E-08 -0.10536"
+        rpy="0 0 0" />
+      <mass
+        value="179.35" />
+      <inertia
+        ixx="4.8557"
+        ixy="1.9369E-08"
+        ixz="-1.5161E-06"
+        iyy="4.8557"
+        iyz="-3.0711E-07"
+        izz="6.5706" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armin_description/meshes/base_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.02 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armin_description/meshes/base_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="a1_link">
+    <inertial>
+      <origin
+        xyz="0.068866 -0.062357 -2.0514E-06"
+        rpy="0 0 0" />
+      <mass
+        value="27.418" />
+      <inertia
+        ixx="0.36401"
+        ixy="0.11229"
+        ixz="1.615E-07"
+        iyy="0.31929"
+        iyz="7.9981E-07"
+        izz="0.41728" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armin_description/meshes/a1_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.1 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armin_description/meshes/a1_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="a1_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.407"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="a1_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="${-pi* 2.}"
+      upper="${pi * 2.}"
+      effort="101"
+      velocity="1.01" />
+    <dynamics
+      damping="1E-05"
+      friction="1E-05" />
+  </joint>
+  <link
+    name="a2_link">
+    <inertial>
+      <origin
+        xyz="0.0013396 0.23351 -3.7313E-06"
+        rpy="0 0 0" />
+      <mass
+        value="24.15" />
+      <inertia
+        ixx="1.4097"
+        ixy="-0.041018"
+        ixz="5.0045E-07"
+        iyy="0.14649"
+        iyz="3.953E-05"
+        izz="1.4177" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armin_description/meshes/a2_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.941 0.902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armin_description/meshes/a2_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="a2_joint"
+    type="revolute">
+    <origin
+      xyz="0.2175 -0.118 0"
+      rpy="3.1416 0 0" />
+    <parent
+      link="a1_link" />
+    <child
+      link="a2_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-2.33" upper="2.37"
+      effort="102000"
+      velocity="1.02" />
+    <dynamics
+      damping="2E-05"
+      friction="2E-05" />
+  </joint>
+  <link
+    name="a3_link">
+    <inertial>
+      <origin
+        xyz="0.012915 -0.029952 1.129E-07"
+        rpy="0 0 0" />
+      <mass
+        value="8.4355" />
+      <inertia
+        ixx="0.044109"
+        ixy="0.013892"
+        ixz="-2.9103E-08"
+        iyy="0.041878"
+        iyz="3.1132E-08"
+        izz="0.054343" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armin_description/meshes/a3_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armin_description/meshes/a3_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="a3_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0935 0.5 0"
+      rpy="0 0 3.1416" />
+    <parent
+      link="a2_link" />
+    <child
+      link="a3_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="${-pi}"
+      upper="${pi}"
+      effort="103"
+      velocity="1.03" />
+    <dynamics
+      damping="3E-05"
+      friction="3E-05" />
+  </joint>
+  <link
+    name="a4_link">
+    <inertial>
+      <origin
+        xyz="0.020829 0.21628 -2.64E-07"
+        rpy="0 0 0" />
+      <mass
+        value="6.8503" />
+      <inertia
+        ixx="0.23532"
+        ixy="-0.023217"
+        ixz="-3.4376E-09"
+        iyy="0.016743"
+        iyz="2.9764E-07"
+        izz="0.23759" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armin_description/meshes/a4_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2941 0.902 0.4902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armin_description/meshes/a4_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="a4_joint"
+    type="revolute">
+    <origin
+      xyz="0.065001 -0.1505 0"
+      rpy="0 0 3.1416" />
+    <parent
+      link="a3_link" />
+    <child
+      link="a4_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="${-pi}"
+      upper="${pi}"
+      effort="104"
+      velocity="1.04" />
+    <dynamics
+      damping="4E-05"
+      friction="4E-05" />
+  </joint>
+  <link
+    name="a5_link">
+    <inertial>
+      <origin
+        xyz="-0.0014946 0.045755 3.2674E-09"
+        rpy="0 0 0" />
+      <mass
+        value="3.3504" />
+      <inertia
+        ixx="0.015695"
+        ixy="-0.0029154"
+        ixz="-2.4575E-10"
+        iyy="0.0050036"
+        iyz="3.0734E-11"
+        izz="0.015644" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armin_description/meshes/a5_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.941 0.902 0.02 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armin_description/meshes/a5_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="a5_joint"
+    type="revolute">
+    <origin
+      xyz="0.1055 0.3765 0"
+      rpy="0 0 0" />
+    <parent
+      link="a4_link" />
+    <child
+      link="a5_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="${-pi}"
+      upper="${pi}"
+      effort="105"
+      velocity="1.05" />
+    <dynamics
+      damping="5E-05"
+      friction="5E-05" />
+  </joint>
+  <link
+    name="a6_link">
+    <inertial>
+      <origin
+        xyz="0.00025804 0.055668 -0.00019823"
+        rpy="0 0 0" />
+      <mass
+        value="7.9656" />
+      <inertia
+        ixx="0.029026"
+        ixy="1.4563E-06"
+        ixz="-4.0755E-07"
+        iyy="0.0090903"
+        iyz="-4.9215E-05"
+        izz="0.02904" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armin_description/meshes/a6_link.stl" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://armin_description/meshes/a6_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="a6_joint"
+    type="continuous">
+    <origin
+      xyz="0.0175 0.174 0"
+      rpy="0 0 0" />
+    <parent
+      link="a5_link" />
+    <child
+      link="a6_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="106"
+      velocity="1.06" />
+    <dynamics
+      damping="6E-05"
+      friction="6E-05" />
+  </joint>
+  <link
+    name="ee_link">
+    
+    <collision>
+      <geometry>
+        <box size="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.01 0 0"/>
+    </collision>
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.005 0.005 0.005"/>
+        </geometry>
+        <material name="">
+          <color rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+        </material>
+     </visual>
+  </link>
+  <joint
+    name="ee_fixed_joint"
+    type="fixed">
+    <origin
+      xyz="0 0.24537 0"
+      rpy="3.1416 0 0" />
+    <parent
+      link="a6_link" />
+    <child
+      link="ee_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <xacro:armin_arm_transmission prefix="${prefix}" />
+  <xacro:armin_arm_gazebo prefix="${prefix}" />
+
+  </xacro:macro>
+</robot>
