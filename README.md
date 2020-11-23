@@ -18,10 +18,10 @@ link (not done yet).
 ## Получение актуальной версии
 Для запуска команд, описанных ниже, необходимо в вашем рабочем окружении ROS выполнить следующее:
 
-`cd `ROS_WORKSPACE`/src
-git clone https://github.com/ulsu-tech/armin_manipulator_public.git
-cd ..
-catkin_make`
+`cd `ROS_WORKSPACE`/src`
+`git clone https://github.com/ulsu-tech/armin_manipulator_public.git`
+`cd ..`
+`catkin_make`
 
 
 ## Содержание репозитория
@@ -33,7 +33,7 @@ catkin_make`
 - **armin_manipulators** - пакет, содержащий код приложение, используемых для чтения сигналов с источников управления и формирования команд для манипулятора.
 - **armin_base_ikfast_ikfast_plugin** - Inverse Kinematic Solver IKFast собранный для группы планирования base (смотрите пакет armin_moveit_config).
 
-## Запуск в RViz
+## Запуск в RViz (armin_description)
 Для просмотра визуальной модели манипулятора и оценки подвижности суставов, достигаемого пространства,
 необходимо выполнить:
 
@@ -45,3 +45,17 @@ catkin_make`
 ![RViz with armin manipulator](rviz_gui.png "Окно RViz и gui state publisher")
 
 Манипулятор содержит 6 степеней свободы, доступных к установке и захват, фиксирующийся в 2х положениях (открыто и закрыто). Изменение захвата доступно только на физической модели и не описано в URDF модели.
+
+## Запуск симулятора Gazebo и управление из RViz через MoveIt плагин (armin_gazeboed, armin_moveit_config, armin_description)
+Симуляция манипулятора возможна в пакете Gazebo.
+Для загрузки модели в Gazebo и запуска симулированных приводов и сенсоров, необходимо выполнить:
+`roslaunch armin_gazeboed armin_world_remap.launch`
+Вызов этой команды откроет окно Gazebo с загруженной моделью манипулятора. Примерный вид как на изображении ниже:
+![Gazebo with model loaded](gazebo.png "Окно Gazebo с моделью манипулятора")
+
+При этом менеджер контроллеров загрузил и запустил 2 контроллера:
+- /armin/controller/position - контроллер типа FollowJointTrajectory, принимающий на вход траекторию для исполнения, совместимую с генерируемыми MoveIt
+- /armin/controller/position/state - контроллер, публикующий состояние узлом манипулятора от симулятора.
+
+Результаты вызовов команд `rosnode list` и `rostopic list` будет похожим на следующий:
+![Rostopic and rosnode](nodes_topics.png "Ноды и топики при запущенном Gazebo")
