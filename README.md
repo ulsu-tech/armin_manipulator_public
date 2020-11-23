@@ -19,8 +19,11 @@ link (not done yet).
 Для запуска команд, описанных ниже, необходимо в вашем рабочем окружении ROS выполнить следующее:
 
 `cd `ROS_WORKSPACE`/src`
+
 `git clone https://github.com/ulsu-tech/armin_manipulator_public.git`
+
 `cd ..`
+
 `catkin_make`
 
 
@@ -49,7 +52,9 @@ link (not done yet).
 ## Запуск симулятора Gazebo и управление из RViz через MoveIt плагин (armin_gazeboed, armin_moveit_config, armin_description)
 Симуляция манипулятора возможна в пакете Gazebo.
 Для загрузки модели в Gazebo и запуска симулированных приводов и сенсоров, необходимо выполнить:
+
 `roslaunch armin_gazeboed armin_world_remap.launch`
+
 Вызов этой команды откроет окно Gazebo с загруженной моделью манипулятора. Примерный вид как на изображении ниже:
 ![Gazebo with model loaded](gazebo.png "Окно Gazebo с моделью манипулятора")
 
@@ -59,3 +64,18 @@ link (not done yet).
 
 Результаты вызовов команд `rosnode list` и `rostopic list` будет похожим на следующий:
 ![Rostopic and rosnode](nodes_topics.png "Ноды и топики при запущенном Gazebo")
+
+### Запуск RViz и командование из MoveIt
+Для планирования траектории и передачи их на исполнение в контроллеры Gazebo, необходимо загрузить
+параметры планирования. Для этого выполняем:
+
+`roslaunch armin_moveit_config  move_group.launch`
+
+После чего, можем запустить RViz с настройками инициализированными для работы в MoveIt:
+
+`rosrun rviz rviz  -d $(rospack find armin_gazeboed)/rviz_at_gazebo.rviz`
+
+Если всё прошло хорошо, будет открыто окно RViz с инструментами для настройки планирования движения. Пример того, как это может выглядеть на изображении ниже:
+![RViz with MoveIt](rviz_moveit.png "Окно RViz с настроенной группой планирования")
+
+
