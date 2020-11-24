@@ -177,3 +177,7 @@ link (not done yet).
 
 Пример интерактивного управления от самолётного джойстика можно увидеть по ссылке:
 [![Video stick-type joystick manipulation](https://img.youtube.com/vi/TtRae1bPHyc/0.jpg "Интерактивное управление от самолётного джойстика ссылка на YouTube")](https://youtube.com/watch?v=TtRae1bPHyc)
+
+## Прототип манипулятора
+В НИТИ им. Капицы УлГУ собран описанный манипулятор. Презентация прототипа доступна по ссылке ниже
+[![Prototype presentation](https://img.youtube.com/vi/y7DFWAzhGNo/0.jpg "Презентация прототипа манипулятора")](https://youtube.com/watch?v=y7DFWAzhGNo)  
