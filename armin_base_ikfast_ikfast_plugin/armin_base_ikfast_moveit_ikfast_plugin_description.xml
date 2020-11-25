@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<library path="lib/libarmin_base_ikfast_moveit_ikfast_plugin">
+  <class base_class_type="kinematics::KinematicsBase" name="armin_base_ikfast/IKFastKinematicsPlugin" type="armin_base_ikfast::IKFastKinematicsPlugin">
+    <description>IKFast61 plugin for closed-form kinematics of armin base_ikfast</description>
+  </class>
+</library>

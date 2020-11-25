@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="armin" >
+  <!-- common stuff -->
+  <xacro:include filename="$(find armin_description)/urdf/common.gazebo.xacro" />
+
+  <!-- armor -->
+  <xacro:include filename="$(find armin_description)/urdf/armin.urdf.xacro" />
+
+  <!-- arm -->
+  <xacro:armin_robot prefix="" joint_limited="false"/>
+
+  <link name="world" />
+
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link = "base_link" />
+    <origin xyz="0 0 0" rpy="3.14 0 0"/><axis><limit><lower>0</lower><upper>0</upper></limit><xyz>0 0 1</xyz></axis>
+  </joint>
+
+</robot>
